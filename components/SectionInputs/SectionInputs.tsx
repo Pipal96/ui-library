@@ -27,14 +27,6 @@ const SectionInputs = () => {
                        invalid: null,
                      }}
           />
-          <InputText name={'surname'}
-                     id={'surname'}
-                     placeholder={'Your name'}
-                     images={{
-                       valid: valid,
-                       invalid: null,
-                     }}
-          />
           <button>send</button>
         </SendForm>
       </S.MainContainer>

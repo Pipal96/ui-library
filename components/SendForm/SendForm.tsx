@@ -16,7 +16,7 @@ const SendForm: FC<SendFormProps> = ({children}) => {
   }
 
   return (
-    <S.Form onSubmit={submit}>
+    <S.Form onSubmit={submit} autoComplete={'off'}>
       {children}
     </S.Form>
   );

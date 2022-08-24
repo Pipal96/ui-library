@@ -1,50 +1,40 @@
-import * as S from './styledInputText'
+import * as S from './styledInputEmail'
 import {FC, useState} from "react";
 
-type InputTextProps = {
+type InputEmailProps = {
   name: string;
   id: string;
   placeholder: string;
   isRegExp?: boolean;
   regexp?: string;
   isRequired?: boolean;
-  minLength?: number;
-  maxLength?: number;
 } & S.InputProps
 
-const InputText: FC<InputTextProps> = ({
-                                         name,
-                                         id,
-                                         placeholder,
-                                         isRegExp = false,
-                                         isRequired = true,
-                                         regexp = '^[A-Za-z]+$',
-                                         minLength = 2,
-                                         maxLength = 22,
-                                         images,
-                                       }) => {
+const InputEmail: FC<InputEmailProps> = ({
+                                           name,
+                                           id,
+                                           placeholder,
+                                           isRegExp = false,
+                                           isRequired = true,
+                                           regexp = '^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i',
+                                           images,
+                                         }) => {
+
 
   const [inputVal, setInputVal] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
   function handlerInput(event: any) {
     const str = event.target.value
-
     setErrorMessage(event.target.validationMessage)
 
     setInputVal(str)
 
-
     /*For regexp*/
+
     // if (str && isRegExp) {
     //   const reg = new RegExp(regexp)
     //   str.match(reg)
-    // }
-    //
-    // if (str.length >= minLength && str.length <= maxLength) {
-    //   console.log('valid length')
-    // } else {
-    //   console.log('invalid length')
     // }
   }
 
@@ -60,15 +50,13 @@ const InputText: FC<InputTextProps> = ({
   return (
     <>
       <S.InputWrap>
-        <S.Input type='text'
-                 inputMode={'text'}
+        <S.Input type='email'
+                 inputMode={'email'}
                  name={name} id={id}
                  className={currentValidClass()}
                  placeholder={placeholder}
                  onInput={handlerInput}
                  required={isRequired}
-                 minLength={minLength}
-                 maxLength={maxLength}
                  value={inputVal}
                  images={images}
         />
@@ -76,7 +64,7 @@ const InputText: FC<InputTextProps> = ({
       </S.InputWrap>
       {errorMessage && <S.ErrorMessage>{errorMessage}</S.ErrorMessage>}
     </>
-  );
+  )
 };
 
-export {InputText};
+export {InputEmail};

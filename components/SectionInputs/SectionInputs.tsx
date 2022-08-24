@@ -1,8 +1,10 @@
 import * as S from './styledSectionInputs'
 import {InputText} from "../InputText";
+import {SendForm} from "../SendForm";
+import {InputEmail} from "../InputEmail";
 
 import valid from '/public/input/valid.svg'
-import {SendForm} from "../SendForm";
+import invalid from '/public/input/invalid.svg'
 
 const SectionInputs = () => {
   return (
@@ -24,8 +26,16 @@ const SectionInputs = () => {
                      placeholder={'Your name'}
                      images={{
                        valid: valid,
-                       invalid: null,
+                       invalid: invalid,
                      }}
+          />
+          <InputEmail name={'email'}
+                      id={'email'}
+                      placeholder={'E-mail'}
+                      images={{
+                        valid: valid,
+                        invalid: invalid,
+                      }}
           />
           <button>send</button>
         </SendForm>

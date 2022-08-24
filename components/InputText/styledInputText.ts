@@ -71,3 +71,13 @@ export const Label = styled.label`
   transition-timing-function: ease-in-out;
   transition-duration: .2s;
 `;
+
+export const ErrorMessage = styled.p`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+
+  margin: 6px 0 0;
+
+  color: #f82e2e;
+`;

@@ -9,7 +9,7 @@ const SendForm: FC<SendFormProps> = ({children}) => {
 
   function submit(event: any) {
     event.preventDefault()
-
+    
     for (const eventElement of event.target) {
       console.log(eventElement.value)
     }

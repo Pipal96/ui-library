@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Container} from "../Container";
 
-export const Section = styled.section``;
+export const SectionMain = styled.section``;
 
 export const MainContainer = styled(Container)``;
 
